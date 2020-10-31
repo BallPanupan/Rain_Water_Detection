@@ -1,4 +1,8 @@
-int inPin = 2;    
+int inPin = 2;  
+
+int analogPin = A0;  
+int val2 = 0;
+
 int rain_val;      
 int relay_pin = 15; 
 
@@ -31,6 +35,10 @@ void setup() {
 }
 
 void loop() {
+  val2 = analogRead(analogPin);
+  Serial.print("val = "); // พิมพ์ข้อมความส่งเข้าคอมพิวเตอร์ "val = "
+  Serial.println(val2); // พิมพ์ค่าของตัวแปร val
+  
   buttonState1 = digitalRead(buttonPin1);
   buttonState2 = digitalRead(buttonPin2);
   buttonState3 = digitalRead(buttonPin3);
