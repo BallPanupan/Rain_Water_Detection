@@ -53,7 +53,8 @@ void loop() {
     Serial.println("_________ on 1");
     digitalWrite(led_pin1, HIGH);
     pinMode(relay_pin, HIGH);
-    delay(10000);
+    Serial.println("3 ms");
+    delay(3000); // 3 ms
   }else{
     digitalWrite(led_pin1, LOW);
     pinMode(relay_pin, LOW);
@@ -62,15 +63,24 @@ void loop() {
     // turn LED on:
     Serial.println("_________ on 2");
     digitalWrite(led_pin2, HIGH);
+    pinMode(relay_pin, HIGH);
+    Serial.println("60 minute");
+    delay(3600000); // 60 minute = 3600000
+    
   }else{
     digitalWrite(led_pin2, LOW);
+    pinMode(relay_pin, LOW);
     }
   if (buttonState3 == HIGH) {
     // turn LED on:
     Serial.println("_________ on 3");
     digitalWrite(led_pin3, HIGH);
+    pinMode(relay_pin, HIGH);
+    Serial.println("3 Hours");
+    delay(10800000);// 180 minute = 10800000
   }else{
     digitalWrite(led_pin3, LOW);
+    pinMode(relay_pin, LOW);
     }
 
   if(rain_val == 1){
@@ -78,6 +88,7 @@ void loop() {
     }
   else{
     pinMode(relay_pin, HIGH);
+    delay(5000);
     }
     
   delay(200);
