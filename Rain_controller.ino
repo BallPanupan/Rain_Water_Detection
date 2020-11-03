@@ -77,7 +77,7 @@ void loop() {
     digitalWrite(led_pin3, HIGH);
     pinMode(relay_pin, HIGH);
     Serial.println("3 Hours");
-    delay(10800000);// 180 minute = 10800000
+    delay(28800000);// 480 minute | 8 hourst = 28800000
   }else{
     digitalWrite(led_pin3, LOW);
     pinMode(relay_pin, LOW);
