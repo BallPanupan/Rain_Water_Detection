@@ -17,6 +17,11 @@ int buttonState1 = 0;
 int buttonState2 = 0;
 int buttonState3 = 0;
 
+int water_Detection = 28800000;// 480 minute | 8 hourst = 28800000
+int time_btn1 = 3000; // 3 ms
+int time_btn2 = 3600000; // 60 minute = 3600000
+int time_btn3 = 28800000;// 480 minute | 8 hourst = 28800000
+
 void setup() {
   Serial.begin(9600);
   pinMode(inPin, INPUT);   
@@ -54,7 +59,7 @@ void loop() {
     digitalWrite(led_pin1, HIGH);
     pinMode(relay_pin, HIGH);
     Serial.println("3 ms");
-    delay(3000); // 3 ms
+    delay(time_btn1); // is 'time_btn1'
   }else{
     digitalWrite(led_pin1, LOW);
     pinMode(relay_pin, LOW);
@@ -65,7 +70,7 @@ void loop() {
     digitalWrite(led_pin2, HIGH);
     pinMode(relay_pin, HIGH);
     Serial.println("60 minute");
-    delay(3600000); // 60 minute = 3600000
+    delay(time_btn2); // is 'time_btn2'
     
   }else{
     digitalWrite(led_pin2, LOW);
@@ -77,18 +82,18 @@ void loop() {
     digitalWrite(led_pin3, HIGH);
     pinMode(relay_pin, HIGH);
     Serial.println("3 Hours");
-    delay(28800000);// 480 minute | 8 hourst = 28800000
+    delay(time_btn3);// is 'time_btn3'
   }else{
     digitalWrite(led_pin3, LOW);
     pinMode(relay_pin, LOW);
     }
 
-  if(rain_val == 1){
+  if(rain_val == 1){ //is water_Detection
     pinMode(relay_pin, LOW);
     }
   else{
     pinMode(relay_pin, HIGH);
-    delay(5000);
+    delay(water_Detection);
     }
     
   delay(200);
