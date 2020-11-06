@@ -17,7 +17,7 @@ int buttonState1 = 0;
 int buttonState2 = 0;
 int buttonState3 = 0;
 
-int water_Detection = 28800000;// 480 minute | 8 hourst = 28800000
+int water_Detection = 14400000;// 240 minute | 4 hourst = 14400000 
 int time_btn1 = 3000; // 3 ms
 int time_btn2 = 3600000; // 60 minute = 3600000
 int time_btn3 = 28800000;// 480 minute | 8 hourst = 28800000
