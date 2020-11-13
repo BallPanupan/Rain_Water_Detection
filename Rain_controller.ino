@@ -108,7 +108,7 @@ void loop() {
 
   Serial.print("Time = ");
   Serial.println(count_time);
-  if (count_time >= 36000000) { //36000000
+  if (count_time >= 12600000) { //36000000
     count_time = 0;
     water_on();
   }else{
